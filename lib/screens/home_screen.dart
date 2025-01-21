@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -71,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               const Text(
@@ -83,20 +85,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.w900,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width / 2,
-                child: Text(
+                child: const Text(
                   'Your favourite foods delivered fast at your door.',
                   style: TextStyle(color: Colors.white, fontSize: 15),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 200,
               ),
-              Row(
+              const Row(
                 children: [
                   Expanded(
                     child: Divider(
@@ -105,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
                       'sign in with',
                       style: TextStyle(
@@ -166,6 +168,57 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   )
                 ],
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 1.5,
+                  padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                  margin: const EdgeInsets.all(
+                    8.0,
+                  ),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: Colors.white,
+                      ),
+                      color: Colors.white.withOpacity(0.4),
+                      borderRadius: BorderRadius.circular(30)),
+                  child: const Center(
+                    child: Text(
+                      'Start with email or phone',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15.0,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: GestureDetector(
+                  onTap: () {
+                    // Add your onTap code here!
+                  },
+                  child: RichText(
+                    text: const TextSpan(
+                      text: 'Already have an account? ',
+                      style: TextStyle(color: Colors.white, fontSize: 15.0),
+                      children: [
+                        TextSpan(
+                          text: 'Sign in',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15.0,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
